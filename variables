@@ -56,7 +56,11 @@ NUMTHREADS=$(( NUMCPUS*2 ))
 # shellcheck disable=SC2034
 FIELD=7
 # shellcheck disable=SC2034
-MINVER=4
+#minimal kernel version
+#MINVER=4
+#MINVER=5
+MINVER=$(uname -sr | cut -c 7)
+
 # shellcheck disable=SC2034
 TMP_FLDR=$(mktemp -d)
 # shellcheck disable=SC2034
